@@ -1,1 +1,1 @@
-console.log('Silence is golden');
+// I am not empty.

@@ -22,20 +22,20 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 // Set a constant for the plugin's main file.
-if ( ! defined( 'citations_FILE' ) ) {
+if ( ! defined( 'CITATIONS_FILE' ) ) {
 	/**
 	 * The path to the main file of the plugin.
 	 *
 	 * @var string
 	 */
-	define( 'citations_FILE', __FILE__ );
+	define( 'CITATIONS_FILE', __FILE__ );
 }
 
 // Load the autoloader.
-require plugin_dir_path( citations_FILE ) . 'vendor/autoload.php';
+require plugin_dir_path( CITATIONS_FILE ) . 'vendor/autoload.php';
 
 // Load the `wp_citations()` entry point function.
-require plugin_dir_path( citations_FILE ) . 'inc/functions.php';
+require plugin_dir_path( CITATIONS_FILE ) . 'inc/functions.php';
 
 // Initialize the plugin.
 call_user_func( 'WpMunich\citations\lh_plugin' );

@@ -3,8 +3,7 @@
 		"./plugin"
 	],
 	"mappings": {
-		"php.ini": "./bin/php.ini",
-		"wp-content": "./wp/"
+		"php.ini": "./bin/php.ini"
 	},
 	"env": {
 		"development": {
