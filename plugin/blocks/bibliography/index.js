@@ -22,9 +22,11 @@ import metadata from './block.json';
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#edit
  */
 import edit from './edit';
+import icon from './../../img/icons/citation.svg';
 
 const settings = {
 	edit,
+	icon,
 
 	/**
 	 * The save function returns null because the output is generated

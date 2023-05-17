@@ -11,6 +11,7 @@ import {
 } from '@wordpress/rich-text';
 import { useState, useEffect } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
+import icon from './../../../../img/icons/citation.svg';
 
 const CiteFormatButton = (props) => {
 	const { isActive, onChange, value, contentRef, activeAttributes } = props;
@@ -56,6 +57,7 @@ const CiteFormatButton = (props) => {
 		<>
 			<RichTextToolbarButton
 				title={__('Cite', 'citations')}
+				icon={icon}
 				onClick={() => {
 					onChange(
 						toggleFormat(value, {
