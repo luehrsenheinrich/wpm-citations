@@ -10,73 +10,6 @@ const LiveReloadPlugin = require('webpack-livereload-plugin');
 const DependencyExtractionWebpackPlugin = require('@wordpress/dependency-extraction-webpack-plugin');
 
 /**
- * Theme frontend JavaScript files
- *
- * @type {string[]}
- */
-const ThemeFrontendJs = globSync('./theme/src/js/*.js').reduce(function (
-	obj,
-	el
-) {
-	obj['js/' + path.parse(el).name + '.min'] = el;
-	obj['js/' + path.parse(el).name] = el;
-	return obj;
-},
-{});
-
-/**
- * Theme frontend CSS files
- *
- * @type {string[]}
- */
-const ThemeFrontendCSS = globSync('./theme/src/css/*.css').reduce(function (
-	obj,
-	el
-) {
-	obj['css/' + path.parse(el).name + '.min'] = el;
-	return obj;
-},
-{});
-
-/**
- * Theme backend JavaScript files
- *
- * @type {string[]}
- */
-const ThemeBackendJs = globSync('./theme/admin/src/js/*.js').reduce(function (
-	obj,
-	el
-) {
-	obj['js/' + path.parse(el).name + '.min'] = el;
-	obj['js/' + path.parse(el).name] = el;
-	return obj;
-},
-{});
-
-/**
- * Theme backend CSS files
- *
- * @type {string[]}
- */
-const ThemeBackendCSS = globSync('./theme/admin/src/css/*.css').reduce(
-	function (obj, el) {
-		obj['css/' + path.parse(el).name + '.min'] = el;
-		return obj;
-	},
-	{}
-);
-
-/**
- * Theme PHP files
- *
- * @type {string[]}
- */
-const ThemePhp = globSync('./theme/**/*.php').reduce(function (obj, el) {
-	obj['php/' + path.parse(el).name] = el;
-	return obj;
-}, {});
-
-/**
  * Plugin backend JavaScript files
  *
  * @type {string[]}
@@ -214,56 +147,6 @@ const defaultConfig = {
 };
 
 /**
- * The webpack config to bundle CSS and JS for the Theme frontend.
- *
- * @type {Object}
- */
-const themeFrontendWebpackOptions = {
-	...defaultConfig,
-	name: 'themeFrontend',
-	entry: {
-		...ThemeFrontendJs,
-		...ThemeFrontendCSS,
-		...ThemePhp,
-	},
-	output: {
-		...defaultConfig.output,
-		path: path.resolve(__dirname, 'theme/dist'),
-	},
-	module: {
-		rules: [...defaultConfig.module.rules, defaultJsLoader],
-	},
-};
-
-/**
- * The webpack config to bundle CSS and JS for the Theme backend.
- *
- * @type {Object}
- */
-const themeBackendWebpackOptions = {
-	...defaultConfig,
-	name: 'themeBackend',
-	entry: {
-		...ThemeBackendJs,
-		...ThemeBackendCSS,
-	},
-	output: {
-		...defaultConfig.output,
-		path: path.resolve(__dirname, 'theme/admin/dist'),
-	},
-	module: {
-		rules: [...defaultConfig.module.rules, wordpressJsLoader],
-	},
-	plugins: [
-		...defaultConfig.plugins,
-		new DependencyExtractionWebpackPlugin({
-			outputFormat: 'json',
-			combineAssets: true,
-		}),
-	],
-};
-
-/**
  * The webpack config to bundle CSS and JS for the Plugin backend.
  *
  * @type {Object}
@@ -292,7 +175,5 @@ const pluginBackendWebpackOptions = {
 };
 
 module.exports = [
-	themeFrontendWebpackOptions,
 	pluginBackendWebpackOptions,
-	themeBackendWebpackOptions,
 ];
