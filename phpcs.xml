@@ -31,8 +31,6 @@
 
 	<arg name="extensions" value="php"/>
 
-	<file>./theme</file>
-	<exclude-pattern>./theme/vendor</exclude-pattern>
 	<file>./plugin</file>
 	<exclude-pattern>./plugin/vendor</exclude-pattern>
 
