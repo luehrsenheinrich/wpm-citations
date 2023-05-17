@@ -21,12 +21,11 @@ import metadata from './block.json';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#edit
  */
-import withBranding from '../../admin/src/js/hoc/with-branding';
 import edit from './edit';
 import icon from './icon.svg';
 
 const settings = {
-	edit: withBranding(edit),
+	edit,
 	icon,
 
 	/**

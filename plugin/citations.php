@@ -4,14 +4,13 @@
  *
  * @package citations
  *
- * Plugin Name: WordPress Project Boilerplate
- * Plugin URI: https://www.luehrsen-heinrich.de
- * Description: A base boilerplate for Luehrsen // Heinrich WordPress projects.
- * Author: Luehrsen // Heinrich
- * Author URI: https://www.luehrsen-heinrich.de
+ * Plugin Name: Citations
+ * Plugin URI: https://wordpress.org/plugins/citations/
+ * Description: This WordPress Plugin introduces advanced citation capabilities to the WordPress Block Editor.
+ * Author: WP Munich
+ * Author URI: https://www.wp-munich.com
  * Version: 0.0.16
  * Text Domain: citations
- * Domain Path: /languages
  */
 
 namespace WpMunich\citations;
@@ -29,6 +28,16 @@ if ( ! defined( 'CITATIONS_FILE' ) ) {
 	 * @var string
 	 */
 	define( 'CITATIONS_FILE', __FILE__ );
+}
+
+// Set a constant for the plugin's directory.
+if ( ! defined( 'CITATIONS_DIR' ) ) {
+	/**
+	 * The path to the directory of the plugin.
+	 *
+	 * @var string
+	 */
+	define( 'CITATIONS_DIR', plugin_dir_path( CITATIONS_FILE ) );
 }
 
 // Load the autoloader.
