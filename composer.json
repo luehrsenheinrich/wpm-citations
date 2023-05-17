@@ -1,5 +1,5 @@
 {
-	"name": "luehrsenheinrich/wp-plugin-boilerplate",
+	"name": "wpmunich/citations-boilerplate",
 	"type": "wordpress-plugin",
 	"license": "GPL-2.0-or-later",
   "optimize-autoloader": true,
@@ -17,19 +17,15 @@
 		"lint": "phpcs -d memory_limit=-1",
 		"fix": "phpcbf -d memory_limit=-1",
 		"post-install-cmd": [
-			"cd theme && composer install",
 			"cd plugin && composer install"
 		],
 		"post-update-cmd": [
-			"cd theme && composer update",
 			"cd plugin && composer update"
 		],
     "i18n-make-pot": [
-      "wp i18n make-pot ./theme ./theme/languages/citationst.pot --exclude=vendor,node_modules,src",
       "wp i18n make-pot ./plugin ./plugin/languages/citations.pot --exclude=vendor,node_modules,src,blocks/**/*.js"
     ],
     "i18n-make-json": [
-      "wp i18n make-json \"./theme/languages/\" --no-purge",
       "wp i18n make-json \"./plugin/languages/\" --no-purge"
     ]
 	},
