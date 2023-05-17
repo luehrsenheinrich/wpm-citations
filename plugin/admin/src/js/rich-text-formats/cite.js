@@ -51,7 +51,7 @@ const CiteFormatButton = (props) => {
 	return (
 		<>
 			<RichTextToolbarButton
-				title={__('Cite', 'bidtp')}
+				title={__('Cite', 'citations')}
 				onClick={() => {
 					onChange(
 						toggleFormat(value, {
@@ -84,7 +84,7 @@ const CiteFormatButton = (props) => {
 											<span className="no-cite-text">
 												{__(
 													'Please set a citation',
-													'bidtp'
+													'citations'
 												)}
 											</span>
 										)}
@@ -129,11 +129,11 @@ const CiteFormatButton = (props) => {
 };
 
 const settings = {
-	name: 'bidt-format/cite',
-	title: __('Cite', 'bidtp'),
+	name: 'wpm-format/cite',
+	title: __('Cite', 'citations'),
 	keywords: [__('bibliography'), __('source')],
 	tagName: 'span',
-	className: 'js--bidt-format-cite',
+	className: 'js--wpm-format-cite',
 	attributes: {
 		citeText: 'data-cite-text',
 	},

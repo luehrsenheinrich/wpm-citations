@@ -21,8 +21,8 @@ const Edit = (props) => {
 		'text/xml'
 	);
 
-	// Find all elements with the class 'js--bidt-format-cite'.
-	const rawCitations = parsed.querySelectorAll('.js--bidt-format-cite');
+	// Find all elements with the class 'js--wpm-format-cite'.
+	const rawCitations = parsed.querySelectorAll('.js--wpm-format-cite');
 
 	rawCitations.forEach((citation) => {
 		// Get the citation from the 'data-cite-text' attribute.

@@ -2,7 +2,7 @@ body {
 	counter-reset: cite;
 }
 
-.js--bidt-format-cite {
+.js--wpm-format-cite {
 
 	&::after {
 		counter-increment: cite;
