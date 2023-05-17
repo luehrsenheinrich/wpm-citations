@@ -31,6 +31,13 @@ class Blocks {
 				'render_callback' => array( $this, 'provide_render_callback' ),
 			)
 		);
+
+		register_block_type(
+			CITATIONS_DIR . 'blocks/bibliography',
+			array(
+				'render_callback' => array( $this, 'provide_render_callback' ),
+			)
+		);
 	}
 
 	/**
@@ -59,6 +66,14 @@ class Blocks {
 			array_merge( array(), $block_assets['dependencies'] ),
 			$block_assets['version'],
 			true
+		);
+
+		wp_enqueue_style(
+			'citations-admin',
+			lh_plugin()->get_plugin_url() . '/admin/dist/css/admin.min.css',
+			array(),
+			lh_plugin()->get_plugin_version(),
+			'all'
 		);
 
 		/**

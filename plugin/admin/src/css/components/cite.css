@@ -1,0 +1,13 @@
+body {
+	counter-reset: cite;
+}
+
+.js--bidt-format-cite {
+
+	&::after {
+		counter-increment: cite;
+		content: " [" counter(cite) "]";
+		font-size: 0.5em;
+		vertical-align: super;
+	}
+}

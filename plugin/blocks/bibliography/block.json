@@ -1,0 +1,20 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "lh/bibliography",
+  "title": "Bibliography",
+  "description": "Integrate a comprehensive bibliography into your narrative.",
+  "textdomain": "citations",
+  "category": "design",
+	"supports": {
+		"align": ["wide"],
+    "multiple": false,
+    "color": {
+      "background": true,
+      "text": true
+    }
+	},
+  "attributes": {},
+  "example": {},
+  "editorScript": "citations-blocks"
+}

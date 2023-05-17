@@ -1,0 +1,46 @@
+.block-editor-cite-control {
+	max-width: 22.5rem;
+	width: 90vw;
+
+	& .block-editor-cite-control__field {
+		margin: 1rem;
+	}
+
+	& .block-editor-cite-control__preview-text {
+
+
+		& .no-cite-text {
+			color: #999;
+			font-style: italic;
+		}
+	}
+
+	& .block-editor-cite-control__preview {
+		display: grid;
+		grid-template-columns: 1fr max-content;
+		align-items: center;
+
+		& .components-button {
+			text-decoration: none;
+		}
+	}
+
+	& .block-editor-cite-control__edit {
+		display: grid;
+		grid-template-columns: 1fr max-content;
+		align-items: stretch;
+
+		& .components-button {
+			text-decoration: none;
+		}
+
+		& .components-base-control__field {
+			margin-bottom: 0;
+			height: 100%;
+
+			& .components-text-control__input {
+				min-height: 100%;
+			}
+		}
+	}
+}

@@ -38,23 +38,6 @@ const PluginBackendCSS = globSync('./plugin/admin/src/css/*.css').reduce(
 );
 
 /**
- * The default JS loader.
- * This is a very vanilla JS loader based on Babel preset-env.
- *
- * @type {Object}
- */
-const defaultJsLoader = {
-	test: /\.js$/,
-	exclude: /node_modules/,
-	use: {
-		loader: 'babel-loader',
-		options: {
-			presets: ['@babel/preset-env'],
-		},
-	},
-};
-
-/**
  * The WordPress JS loader.
  * The opinionated WordPress JS loader. We only use this within the WordPress admin.
  *
@@ -82,7 +65,7 @@ const wordpressJsLoader = {
  * @type {Object}
  */
 const defaultConfig = {
-	mode: 'development',
+	mode: 'production',
 	optimization: {
 		minimizer: [
 			new TerserPlugin({

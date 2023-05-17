@@ -1,1 +1,1 @@
-// I am not empty.
+import './rich-text-formats/cite.js';
