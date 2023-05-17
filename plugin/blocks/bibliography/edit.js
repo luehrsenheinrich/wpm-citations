@@ -18,7 +18,7 @@ const Edit = (props) => {
 	// Parse the post content into a document tree.
 	const parsed = new window.DOMParser().parseFromString(
 		postContent,
-		'text/xml'
+		'text/html'
 	);
 
 	// Find all elements with the class 'js--wpm-format-cite'.
@@ -27,6 +27,7 @@ const Edit = (props) => {
 	rawCitations.forEach((citation) => {
 		// Get the citation from the 'data-cite-text' attribute.
 		const citationText = citation.getAttribute('data-cite-text');
+
 		citations.push(citationText);
 	});
 

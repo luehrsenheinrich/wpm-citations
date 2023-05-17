@@ -6,7 +6,7 @@ import { Popover, TextControl, Button } from '@wordpress/components';
 import {
 	registerFormatType,
 	toggleFormat,
-	useAnchorRef,
+	useAnchor,
 	applyFormat,
 } from '@wordpress/rich-text';
 import { useState, useEffect } from '@wordpress/element';
@@ -14,7 +14,11 @@ import { __ } from '@wordpress/i18n';
 
 const CiteFormatButton = (props) => {
 	const { isActive, onChange, value, contentRef, activeAttributes } = props;
-	const anchorRef = useAnchorRef({ ref: contentRef, value, settings });
+	const anchor = useAnchor({
+		editableContentElement: contentRef.current,
+		value,
+		settings,
+	});
 
 	const [popoverOpen, setPopoverOpen] = useState(false);
 	const [popoverHasFocus, setPopoverHasFocus] = useState(false);
@@ -64,13 +68,14 @@ const CiteFormatButton = (props) => {
 			/>
 			{popoverOpen && (
 				<Popover
-					anchorRef={anchorRef}
+					anchor={anchor}
 					focusOnMount={false}
 					noArrow={false}
 					position="bottom center"
 					onFocus={() => {
 						setPopoverHasFocus(true);
 					}}
+					offset={8}
 					onBlur={() => {
 						setPopoverHasFocus(false);
 					}}
