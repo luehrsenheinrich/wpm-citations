@@ -1,15 +1,12 @@
 {
-  "name": "wpmunich/lhbpp",
+  "name": "wpmunich/citations",
   "type": "wordpress-plugin",
   "optimize-autoloader": true,
   "require": {
-    "cjstroud/classnames-php": "^1.0",
-    "php-di/php-di": "^6.3",
-    "yahnis-elsts/plugin-update-checker": "^4.11"
   },
   "autoload": {
     "psr-4": {
-      "WpMunich\\lhpbpp\\": "inc/"
+      "WpMunich\\citations\\": "inc/"
     }
   },
   "config": {

@@ -2,7 +2,7 @@
 /**
  * Stubs for the project.
  *
- * @package lhpbp
+ * @package citations
  */
 
 /**

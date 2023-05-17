@@ -1,7 +1,4 @@
 {
-	"themes": [
-		"./theme"
-	],
 	"plugins": [
 		"./plugin"
 	],
@@ -15,7 +12,7 @@
 			"config": {
 				"WP_DEBUG": true,
 				"WP_ENVIRONMENT_TYPE": "development",
-				"LH_CURRENTLY_EDITING": "lhpbp"
+				"LH_CURRENTLY_EDITING": "citations"
 			}
 		}
 	}

@@ -15,8 +15,8 @@ const Edit = (props) => {
 	return (
 		<>
 			<InspectorControls>
-				<PanelBody title={__('Settings', 'lhpbpp')}>
-					<p>{__('This is a demo block.', 'lhpbpp')}</p>
+				<PanelBody title={__('Settings', 'citations')}>
+					<p>{__('This is a demo block.', 'citations')}</p>
 					<IconSelectControl
 						value={icon}
 						onChange={(value) => setAttributes({ icon: value })}
@@ -40,7 +40,7 @@ const Edit = (props) => {
 						<Icon slug={icon} />
 					</div>
 				)}
-				<p>{__('This is a demo block.', 'lhpbpp')}</p>
+				<p>{__('This is a demo block.', 'citations')}</p>
 			</div>
 		</>
 	);

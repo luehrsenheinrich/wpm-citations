@@ -4,8 +4,8 @@
   "name": "lh/demo",
   "title": "Demo Block",
   "description": "A demo block",
-  "textdomain": "lhpbpp",
-  "category": "lhpbpp-blocks",
+  "textdomain": "citations",
+  "category": "citations-blocks",
   "supports": {
     "align": [ "wide" ]
   },
@@ -22,5 +22,5 @@
     }
   },
   "example": {},
-  "editorScript": "lhpbpp-blocks"
+  "editorScript": "citations-blocks"
 }

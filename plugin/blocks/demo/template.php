@@ -9,7 +9,7 @@
  * @package jitmp
  */
 
-use function WpMunich\lhpbpp\lh_plugin;
+use function WpMunich\citations\lh_plugin;
 
 $attr = wp_parse_args(
 	$attributes,
@@ -36,5 +36,5 @@ $icon = lh_plugin()->svg()->get_svg(
 			<?php echo $icon; ?>
 		</div>
 	<?php endif; ?>
-	<p><?php _e( 'This is a demo block.', 'lhpbpp' ); ?></p>
+	<p><?php _e( 'This is a demo block.', 'citations' ); ?></p>
 </div>

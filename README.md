@@ -23,9 +23,9 @@ your liking, downloaded the source of the boilerplate and uploaded it to your
 new repository. So let's get started:
 
 ### Project Slug & Names
-- [ ] Search & Replace (case sensitive) `lhpbp` with your new WordPress project slug
-- [ ] Adjust details in `package.json` and update the file headers in `theme/style.css` and `plugin/lhpbpp.php`
-- [ ] Rename the main plugin file from `plugin/lhpbpp.php` to `plugin/<new_project_slug>p.php`
+- [ ] Search & Replace (case sensitive) `citations` with your new WordPress project slug
+- [ ] Adjust details in `package.json` and update the file headers in `theme/style.css` and `plugin/citations.php`
+- [ ] Rename the main plugin file from `plugin/citations.php` to `plugin/<new_project_slug>p.php`
 
 ### Running the enviroment
 - [ ] Type `npm start` into the terminal to spin up the docker enviroment

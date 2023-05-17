@@ -25,8 +25,8 @@
 			"cd plugin && composer update"
 		],
     "i18n-make-pot": [
-      "wp i18n make-pot ./theme ./theme/languages/lhpbpt.pot --exclude=vendor,node_modules,src",
-      "wp i18n make-pot ./plugin ./plugin/languages/lhpbpp.pot --exclude=vendor,node_modules,src,blocks/**/*.js"
+      "wp i18n make-pot ./theme ./theme/languages/citationst.pot --exclude=vendor,node_modules,src",
+      "wp i18n make-pot ./plugin ./plugin/languages/citations.pot --exclude=vendor,node_modules,src,blocks/**/*.js"
     ],
     "i18n-make-json": [
       "wp i18n make-json \"./theme/languages/\" --no-purge",

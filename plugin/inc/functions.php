@@ -1,11 +1,11 @@
 <?php
 /**
- * The `wp_lhpbpp()` function.
+ * The `lh_plugin()` function.
  *
- * @package lhpbpp
+ * @package citations
  */
 
-namespace WpMunich\lhpbpp;
+namespace WpMunich\citations;
 
 /**
  * Provides access to all available functions of the plugin.
@@ -18,10 +18,8 @@ function lh_plugin() {
 	static $plugin = null;
 
 	if ( null === $plugin ) {
-		$builder   = new \DI\ContainerBuilder();
-		$container = $builder->build();
-
-		$plugin = $container->get( Plugin::class );
+		$plugin = new Plugin();
 	}
+
 	return $plugin;
 }
