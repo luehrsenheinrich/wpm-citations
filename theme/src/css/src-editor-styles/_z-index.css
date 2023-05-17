@@ -1,0 +1,4 @@
+[data-align="left"],
+[data-align="right"] {
+	z-index: 1;
+}

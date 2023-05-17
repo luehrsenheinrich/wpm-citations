@@ -1,0 +1,121 @@
+# This workflow creates a release based upon the information in our wp-boilerplate repositories.
+# It assumes that `npm install`, `composer install` and `npx grunt release` are valid commands.
+# The action expects a valid zip file in the `./update/` folder and the `slug` key in the
+# `package.json` to be set.
+
+name: 🚀 Create Release
+
+on:
+  # This action is triggered manually.
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'The version number of this release. Runs `npm version`.'
+        required: true
+        default: 'patch'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GH_ADMIN_TOKEN }}
+
+      - name: ⚙️ Configure git
+        run: |
+          git config user.name $GITHUB_ACTOR
+          git config user.email gh-actions-${GITHUB_ACTOR}@github.com
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: ⚙️ Setup PHP with tools
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+          tools: composer:v2
+
+      - name: ⚙️ Get project slug
+        id: package
+        run: echo "slug=$(node -p "require('./package.json').slug")" >> $GITHUB_OUTPUT
+
+      - name: 💾 Get node.js cache directory
+        id: node-cache-dir
+        run: echo "dir=$(npm config get cache)" >> $GITHUB_OUTPUT # Use $(yarn cache dir) for yarn
+
+      - name: 💾 Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: ${{ steps.node-cache-dir.outputs.dir }}
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }} # Use '**/yarn.lock' for yarn
+          restore-keys: ${{ runner.os }}-node-
+
+      - name: 💾 Get composer cache directory
+        id: composer-cache
+        run: echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
+
+      - name: ⚙️ Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: ${{ runner.os }}-composer-
+
+      - name: ⚙️ Install Composer Packages
+        run: composer install --prefer-dist
+
+      - name: ⚙️ Install Node Packages
+        run: npm ci
+
+      - name: ✍️ Create Changelog
+        shell: bash
+        id: changelog
+        run: |
+          log=$(git log $(git describe --tags --abbrev=0)..HEAD --pretty=format:'* %s (%h)')
+          log="${log//'%'/'%25'}"
+          log="${log//$'\n'/'%0A'}"
+          log="${log//$'\r'/'%0D'}"
+          echo "log=$log" >> $GITHUB_OUTPUT
+
+      - name: Check Status
+        run: git status
+
+      - name: 🔼 Bump version
+        run: npm version ${{ github.event.inputs.version }} -m 'Tagging %s'
+
+      - name: ⚙️ Get new version
+        id: version
+        run: echo "version=$(node -p "require('./package.json').version")" >> $GITHUB_OUTPUT
+
+      - name: Push the version to git
+        run: |
+            git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_ADMIN_TOKEN }}
+
+      - name: 🚀 Create Release
+        id: create_release
+        uses: softprops/action-gh-release@v1
+        with:
+          body: |
+            ${{ steps.changelog.outputs.log }}
+          files: ./archives/*.zip
+          tag_name: v${{ steps.version.outputs.version }}
+
+      - name: 🚢 Deploy to Update Server
+        if: ${{ success() }}
+        uses: SamKirkland/FTP-Deploy-Action@4.2.0
+        with:
+          server: ${{ secrets.UPDATE_SERVER_HOST }}
+          username: ${{ secrets.UPDATE_SERVER_USER }}
+          password: ${{ secrets.UPDATE_SERVER_PASSWORD }}
+          local-dir: ./archives/
+          state-name: .${{ steps.package.outputs.slug }}-sync-state.json

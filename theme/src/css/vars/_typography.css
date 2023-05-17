@@ -1,0 +1,51 @@
+/**
+ * The base variables for the typography in our theme.
+ */
+
+:root {
+
+	/** Font Family */
+	--font-family: "Fira Sans", "Arial", "Helvetica", sans-serif;
+	--font-family-headlines: "Fira Sans", "Arial", "Helvetica", sans-serif;
+
+	/** Base sizes */
+	--global-font-size: 16; /* The base font size from the browser for calculations. */
+	--global-font-line-height: 1.5;
+	--global-headline-line-height: 1.3;
+	--global-letter-spacing: normal;
+
+	/** Headline font sizes **/
+	--global-h1-font-size: calc(32 / var(--global-font-size) * 1rem);
+	--global-h2-font-size: calc(30 / var(--global-font-size) * 1rem);
+	--global-h3-font-size: calc(28 / var(--global-font-size) * 1rem);
+	--global-h4-font-size: calc(24 / var(--global-font-size) * 1rem);
+	--global-h5-font-size: calc(20 / var(--global-font-size) * 1rem);
+	--global-h6-font-size: calc(18 / var(--global-font-size) * 1rem);
+
+	/* Custom editor font sizes */
+	--font-size-small: calc(14 / var(--global-font-size) * 1rem);
+	--font-size-regular: calc(16 / var(--global-font-size) * 1rem);
+	--font-size-large: var(--global-h4-font-size);
+	--font-size-larger: var(--global-h1-font-size);
+}
+
+@media (--sm-query) {
+
+	:root {
+
+		/** Typography **/
+		--global-letter-spacing: 0.5px;
+
+		/** Headline font sizes **/
+		--global-h1-font-size: calc(48 / var(--global-font-size) * 1rem);
+		--global-h2-font-size: calc(40 / var(--global-font-size) * 1rem);
+		--global-h3-font-size: calc(36 / var(--global-font-size) * 1rem);
+		--global-h4-font-size: calc(32 / var(--global-font-size) * 1rem);
+		--global-h5-font-size: calc(24 / var(--global-font-size) * 1rem);
+		--global-h6-font-size: calc(22 / var(--global-font-size) * 1rem);
+
+		/* Custom editor font sizes */
+		--font-size-small: calc(14 / var(--global-font-size) * 1rem);
+		--font-size-regular: calc(18 / var(--global-font-size) * 1rem);
+	}
+}

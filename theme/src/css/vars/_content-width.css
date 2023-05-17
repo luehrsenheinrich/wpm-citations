@@ -1,0 +1,35 @@
+/**
+ * Define the width at which our default content will be displayed.
+ */
+:root {
+
+	/** Content Widths **/
+	--content-xs: calc(100vw - var(--grid-gutter-width) * 2);
+	--content-sm: calc((var(--bp-sm) * 12 / 12));
+	--content-md: calc((var(--bp-md) * 10 / 12));
+	--content-lg: calc((var(--bp-lg) * 8 / 12));
+
+	/** Define a base variable, that is overwritten by responsive breakpoints **/
+	--content-width: var(--content-xs);
+}
+
+@media (--sm-query) {
+
+	:root {
+		--content-width: var(--content-sm);
+	}
+}
+
+@media (--md-query) {
+
+	:root {
+		--content-width: var(--content-md);
+	}
+}
+
+@media (--lg-query) {
+
+	:root {
+		--content-width: var(--content-lg);
+	}
+}

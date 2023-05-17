@@ -1,0 +1,10 @@
+:root .wp-block-pullquote {
+
+	@media (--xs-query) {
+
+		&.alignfull {
+			padding-left: var(--grid-gutter-width);
+			padding-right: var(--grid-gutter-width);
+		}
+	}
+}

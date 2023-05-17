@@ -1,0 +1,57 @@
+/**
+ * The base color theme for our frontend.
+ *
+ * For the base colors, the light variant has to be
+ * WCAG 2.1 AAA compliant on black.
+ *
+ * The dark variant has to be WCAG 2.1 AAA compliant on white.
+ */
+:root {
+
+	/**
+	 * Primary color.
+	 */
+	--color-primary-300: #d05ce3;
+	--color-primary-500: #9c27b0;
+	--color-primary-700: #6a0080;
+
+	/**
+	 * Secondary color.
+	 */
+	--color-secondary-300: #ff8a50;
+	--color-secondary-500: #ff5722;
+	--color-secondary-700: #c41c00;
+
+	/**
+	 * Tertiary color.
+	 */
+	--color-tertiary-300: #80e27e;
+	--color-tertiary-500: #4caf50;
+	--color-tertiary-700: #087f23;
+
+	/**
+	 * Grayscale colors.
+	 */
+	--color-gray-0: #fff;
+	--color-gray-100: #f5f5f5;
+	--color-gray-300: #e5e5e5;
+	--color-gray-500: #9e9e9e;
+	--color-gray-700: #616161;
+	--color-gray-900: #212121;
+	--color-gray-1000: #000;
+
+	/**
+	 * System colors.
+	 */
+	--color-system-success: #23ad7b;
+	--color-system-warning: #ffc107;
+	--color-system-error: #f44336;
+	--color-system-info: #00a0d2;
+
+	/**
+	 * Color applications.
+	 */
+	--main-background-color: var(--color-gray-100);
+	--main-text-color: var(--color-gray-900);
+	--contrast-color: var(--color-gray-900);
+}

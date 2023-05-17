@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<ruleset name="WordPress LH">
+	<description>Some additional rule settings for development at Luehrsen // Heinrich</description>
+
+	<rule ref="PHPCompatibilityWP"/>
+
+	<rule ref="WordPress-Core">
+		<!--
+		OK, real talk right now. Yoda conditions are ridiculous.
+		The fundamental problem that Yoda conditions attempts to solve is:
+		the equality operator is very close to the assignment operator.
+		It's easy to mess up and accidentally assign to the variable you're
+		trying to check.
+
+		Here's the thing though. Yoda conditions just don't read correctly
+		in the code flow. They require you to change the way you think
+		about the control flow.
+
+		Rather than forcing every conditional to be backwards, why not ban
+		assignment from conditionals? You never really *need* to assign in
+		a conditional.
+
+		So, here's where I stand: no to Yoda conditions. Yes to banning
+		assignment in conditionals.
+
+		Thank you Human Made!
+		-->
+		<exclude name="WordPress.PHP.YodaConditions" />
+	</rule>
+	<rule ref="WordPress-Docs"/>
+
+	<arg name="extensions" value="php"/>
+
+	<file>./theme</file>
+	<exclude-pattern>./theme/vendor</exclude-pattern>
+	<file>./plugin</file>
+	<exclude-pattern>./plugin/vendor</exclude-pattern>
+
+	<!-- For CI, don't fail on warnings -->
+	<config name="ignore_warnings_on_exit" value="1"/>
+
+	<rule ref="WordPress.WP.I18n">
+		<properties>
+			<property name="text_domain" value="lhpbp" />
+		</properties>
+	</rule>
+
+	<rule ref="WordPress.Files">
+		<exclude name="WordPress.Files.FileName"/>
+	</rule>
+
+	<rule ref="WordPress.Arrays.MultipleStatementAlignment">
+		<properties>
+			<!-- No need to adjust alignment of large arrays when the item with the largest key is removed. -->
+			<property name="exact" value="false"/>
+			<!-- Don't align multi-line items if ALL items in the array are multi-line. -->
+			<property name="alignMultilineItems" value="!=100"/>
+			<!-- Array assignment operator should always be on the same line as the array key. -->
+			<property name="ignoreNewlines" value="false"/>
+		</properties>
+	</rule>
+
+	<!--
+	Prevent errors caused by WordPress Coding Standards not supporting PHP 8.0+.
+	See https://github.com/WordPress/WordPress-Coding-Standards/issues/2035
+	-->
+	<ini name="error_reporting" value="E_ALL &#38; ~E_DEPRECATED" />
+
+	<rule ref="phpcs.override.xml"/>
+</ruleset>

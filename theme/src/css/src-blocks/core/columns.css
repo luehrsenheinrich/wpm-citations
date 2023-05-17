@@ -1,0 +1,22 @@
+@media (--xs-query) {
+
+	:root .wp-block-columns {
+
+		&.alignwide {
+			max-width: none;
+			margin-left: calc(var(--grid-gutter-width) * -1);
+			margin-right: calc(var(--grid-gutter-width) * -1);
+
+			&:not(.has-background) > .wp-block-column:not(.has-background) {
+				padding-left: var(--grid-gutter-width);
+				padding-right: var(--grid-gutter-width);
+			}
+		}
+	}
+
+	/* Retcon gutenberg styles. */
+	:root .wp-block-column {
+		flex-basis: 100% !important;
+		flex-grow: 1;
+	}
+}

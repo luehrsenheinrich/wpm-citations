@@ -1,0 +1,26 @@
+:root .wp-block-media-text {
+
+	@media (--xs-query) {
+
+		&.is-stacked-on-mobile {
+			grid-template-columns: 100% !important;
+			grid-row-gap: var(--grid-gutter-width);
+
+			& .wp-block-media-text__content {
+				grid-column: auto;
+				grid-row: auto;
+				padding-top: 0 !important;
+			}
+		}
+	}
+
+	&.has-background {
+		padding-top: 0;
+		padding-bottom: 0;
+
+		& .wp-block-media-text__content {
+			padding-top: calc(var(--grid-gutter-height) / 2);
+			padding-bottom: calc(var(--grid-gutter-height) / 2);
+		}
+	}
+}

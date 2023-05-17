@@ -1,0 +1,18 @@
+/node_modules/
+/wp/
+/vendor/
+/archives/*.zip
+
+# THEME
+/theme/dist
+/theme/admin/dist
+/theme/vendor
+
+# PLUGIN
+/plugin/dist
+/plugin/admin/dist
+/plugin/vendor
+
+# OS
+.DS_Store
+Thumbs.db

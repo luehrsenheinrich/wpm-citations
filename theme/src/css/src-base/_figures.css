@@ -1,0 +1,10 @@
+:root figcaption {
+	margin: 0;
+	font-size: var(--font-size-small);
+	padding: calc(var(--grid-gutter-height) / 2) calc(var(--grid-gutter-width) / 2);
+}
+
+/* Extra wide images within figure tags don't overflow the content area. */
+figure {
+	margin: calc(var(--grid-gutter-height) / 3) 0;
+}

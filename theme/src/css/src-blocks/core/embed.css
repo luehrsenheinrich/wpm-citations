@@ -1,0 +1,10 @@
+.wp-block-embed {
+
+	& .wp-block-embed__wrapper {
+		text-align: center;
+
+		& > * {
+			margin: 0 auto !important;
+		}
+	}
+}

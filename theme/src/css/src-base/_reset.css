@@ -1,0 +1,102 @@
+/*--------------------------------------------------------------
+# Reset - An extension to normalize.css
+--------------------------------------------------------------*/
+
+html {
+	box-sizing: border-box;
+}
+
+/**
+ * Inherit box-sizing to make it easier to change the property for
+ * components that leverage other behavior; see
+ * http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ */
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+/* Reset margins and paddings on most elements */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+li,
+p,
+pre,
+blockquote,
+figure,
+hr {
+	margin: 0;
+	padding: 0;
+}
+
+/* Forms */
+input,
+textarea,
+select,
+button {
+	color: inherit;
+	font: inherit;
+	letter-spacing: inherit;
+}
+
+/* I usually expand input and textarea to full-width */
+input[type="text"],
+textarea {
+	width: 100%;
+}
+
+/* More friendly border */
+input,
+textarea,
+button {
+	border: 1px solid #808080;
+}
+
+/* Some defaults for one-liner buttons */
+button {
+	padding: 0.75em 1em;
+	border-radius: 0;
+	line-height: 1;
+	background-color: transparent;
+}
+
+button * {
+	pointer-events: none;
+}
+
+/* Tables */
+table {
+	table-layout: fixed;
+	width: 100%;
+}
+
+/* Responsive Media */
+img,
+svg,
+iframe,
+video,
+object,
+embed {
+	display: block;
+	max-width: 100%;
+}
+
+/* Hidden Objects */
+[hidden] {
+	display: none !important;
+}
+
+/* noscript styles */
+noscript {
+	display: block;
+	margin-bottom: 1em;
+	margin-top: 1em;
+}

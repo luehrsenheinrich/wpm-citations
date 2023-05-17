@@ -1,0 +1,33 @@
+.react-select {
+
+	& .react-select__input {
+		min-height: auto;
+
+		&:focus {
+			box-shadow: none;
+		}
+	}
+
+	& .react-select__multi-value {
+		display: grid;
+		grid-template-columns: 1fr auto;
+	}
+}
+
+.react-select__control:not(.react-select__control--is-disabled),
+.react-select__option:not(.react-select__option--is-disabled) {
+	cursor: pointer;
+}
+
+.post-type-select__row,
+.term-select__row {
+	flex-flow: row wrap;
+
+	& > * {
+		flex: 1 1 100%;
+	}
+}
+
+:root .react-select__menu {
+	z-index: 10;
+}

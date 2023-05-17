@@ -1,0 +1,83 @@
+/*--------------------------------------------------------------
+# Alignment
+--------------------------------------------------------------*/
+
+:root .alignleft {
+	float: left;
+	margin-right: calc(var(--grid-gutter-width) / 2);
+	max-width: calc(var(--content-xs) / 2);
+}
+
+:root .alignright {
+	float: right;
+	margin-left: calc(var(--grid-gutter-width) / 2);
+	max-width: calc(var(--content-xs) / 2);
+}
+
+:root .aligncenter {
+	clear: both;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+:root .alignwide {
+	clear: both;
+}
+
+:root .alignfull {
+	clear: both;
+	width: auto;
+	max-width: none;
+	margin-left: calc(var(--grid-gutter-width) * -1);
+	margin-right: calc(var(--grid-gutter-width) * -1);
+}
+
+@media (--sm-query) {
+
+	:root .alignwide {
+		margin-left: auto;
+		margin-right: auto;
+		max-width: var(--bp-sm);
+	}
+
+	:root .alignleft {
+		float: left;
+		max-width: calc(var(--content-sm) / 2);
+	}
+
+	:root .alignright {
+		max-width: calc(var(--content-sm) / 2);
+	}
+}
+
+@media (--md-query) {
+
+	:root .alignwide {
+		max-width: var(--bp-md);
+	}
+
+	:root .alignleft {
+		float: left;
+		max-width: calc(var(--content-md) / 2);
+	}
+
+	:root .alignright {
+		max-width: calc(var(--content-md) / 2);
+	}
+}
+
+@media (--lg-query) {
+
+	:root .alignwide {
+		max-width: var(--bp-lg);
+	}
+
+	:root .alignleft {
+		float: left;
+		max-width: calc(var(--content-lg) / 2);
+	}
+
+	:root .alignright {
+		max-width: calc(var(--content-lg) / 2);
+	}
+}

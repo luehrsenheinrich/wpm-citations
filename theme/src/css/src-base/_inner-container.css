@@ -1,0 +1,35 @@
+/*--------------------------------------------------------------
+# Inner Container
+--------------------------------------------------------------*/
+
+:root .inner-container,
+:root .is-root-container,
+[class*="wp-block"] > [class*="__inner-container"],
+[class*="wp-block"] > [class*="__content"] {
+
+	padding-left: var(--grid-gutter-width);
+	padding-right: var(--grid-gutter-width);
+
+	margin-left: auto;
+	margin-right: auto;
+
+	& > * {
+
+		/* The default margin */
+		margin-left: auto;
+		margin-right: auto;
+
+		/**
+		 * By default, content within the container is constraint
+		 * to the content width.
+		 */
+		max-width: var(--content-width);
+
+		/**
+		 * The stack.
+		 */
+		& + * {
+			margin-top: var(--wp--style--block-gap);
+		}
+	}
+}

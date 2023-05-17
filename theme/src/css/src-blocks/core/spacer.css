@@ -1,0 +1,11 @@
+:root .wp-block-spacer {
+
+	/* The Spacer doesn't have margin. */
+	margin-top: 0;
+}
+
+:root .wp-block-spacer + * {
+
+	/* The element after the spacer doesn't have top margin. */
+	margin-top: 0;
+}

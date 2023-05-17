@@ -1,0 +1,87 @@
+# Copyright (C) 2023 Luehrsen // Heinrich
+# This file is distributed under the same license as the WordPress Project Boilerplate plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: WordPress Project Boilerplate 0.0.15\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/plugin\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2023-03-23T13:22:01+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.7.1\n"
+"X-Domain: lhpbpp\n"
+
+#. Plugin Name of the plugin
+msgid "WordPress Project Boilerplate"
+msgstr ""
+
+#. Plugin URI of the plugin
+#. Author URI of the plugin
+msgid "https://www.luehrsen-heinrich.de"
+msgstr ""
+
+#. Description of the plugin
+msgid "A base boilerplate for Luehrsen // Heinrich WordPress projects."
+msgstr ""
+
+#. Author of the plugin
+#: inc/Blocks/Blocks.php:74
+msgid "Luehrsen // Heinrich"
+msgstr ""
+
+#: blocks/demo/template.php:15
+#: admin/dist/js/blocks.js:49
+msgid "This is a demo block."
+msgstr ""
+
+#: inc/ACF/ACF.php:72
+#: inc/ACF/ACF.php:73
+msgid "L//H Settings"
+msgstr ""
+
+#: inc/Blocks/Blocks.php:47
+msgid "Demo Block"
+msgstr ""
+
+#: inc/Blocks/Blocks.php:48
+msgid "A demo block to show that everything is working."
+msgstr ""
+
+#: inc/Blocks/Blocks.php:51
+msgid "ACF"
+msgstr ""
+
+#: inc/Blocks/Blocks.php:51
+msgid "Demo"
+msgstr ""
+
+#: inc/Blocks/Blocks.php:51
+msgid "Block"
+msgstr ""
+
+#: inc/SVG/SVG.php:51
+#: inc/SVG/SVG.php:56
+#: inc/SVG/SVG.php:61
+msgid "Slashes"
+msgstr ""
+
+#: admin/dist/js/blocks.js:39
+msgid "This block is made with ♥ by "
+msgstr ""
+
+#: admin/dist/js/blocks.js:49
+msgid "Settings"
+msgstr ""
+
+#: blocks/demo/block.json
+msgctxt "block title"
+msgid "Demo Block"
+msgstr ""
+
+#: blocks/demo/block.json
+msgctxt "block description"
+msgid "A demo block"
+msgstr ""

@@ -1,0 +1,23 @@
+/*--------------------------------------------------------------
+# Stack - https://every-layout.dev/layouts/stack/
+--------------------------------------------------------------*/
+
+.stack {
+	--space: var(--grid-gutter-height);
+}
+
+.stack > * {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.stack > * + * {
+	margin-top: var(--space);
+}
+
+/*--------------------------------------------------------------
+# Has Background
+--------------------------------------------------------------*/
+:root .has-background {
+	padding: calc(var(--grid-gutter-height) / 2) calc(var(--grid-gutter-width) / 1);
+}

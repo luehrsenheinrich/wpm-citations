@@ -1,0 +1,20 @@
+{
+  "name": "wpmunich/lhbpp",
+  "type": "wordpress-plugin",
+  "optimize-autoloader": true,
+  "require": {
+    "cjstroud/classnames-php": "^1.0",
+    "php-di/php-di": "^6.3",
+    "yahnis-elsts/plugin-update-checker": "^4.11"
+  },
+  "autoload": {
+    "psr-4": {
+      "WpMunich\\lhpbpp\\": "inc/"
+    }
+  },
+  "config": {
+    "platform": {
+      "php": "8.1"
+    }
+  }
+}

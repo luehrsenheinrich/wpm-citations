@@ -1,0 +1,7 @@
+:root .wp-block-group {
+
+	& > *.alignfull {
+		margin-left: 0;
+		margin-right: 0;
+	}
+}

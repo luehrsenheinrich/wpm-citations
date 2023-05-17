@@ -1,0 +1,85 @@
+# Copyright (C) 2023 Luehrsen // Heinrich
+# This file is distributed under the same license as the WordPress Project Boilerplate plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: WordPress Project Boilerplate 0.0.15\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/plugin\n"
+"POT-Creation-Date: 2023-03-23T13:22:01+00:00\n"
+"PO-Revision-Date: 2023-03-23 14:22+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: de_DE@formal\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.2.2\n"
+"X-Domain: lhpbpp\n"
+
+#. Plugin Name of the plugin
+msgid "WordPress Project Boilerplate"
+msgstr "WordPress Projekt Boilerplate"
+
+#. Plugin URI of the plugin
+#. Author URI of the plugin
+msgid "https://www.luehrsen-heinrich.de"
+msgstr "https://www.luehrsen-heinrich.de"
+
+#. Description of the plugin
+msgid "A base boilerplate for Luehrsen // Heinrich WordPress projects."
+msgstr "Eine Basis-Boilerplate für Luehrsen // Heinrich WordPress-Projekte."
+
+#. Author of the plugin
+#: inc/Blocks/Blocks.php:74
+msgid "Luehrsen // Heinrich"
+msgstr "Luehrsen // Heinrich"
+
+#: blocks/demo/template.php:15 admin/dist/js/blocks.js:49
+msgid "This is a demo block."
+msgstr "Dies ist ein Demo-Block."
+
+#: inc/ACF/ACF.php:72 inc/ACF/ACF.php:73
+msgid "L//H Settings"
+msgstr "L//H Einstellungen"
+
+#: inc/Blocks/Blocks.php:47
+msgid "Demo Block"
+msgstr "Demo Block"
+
+#: inc/Blocks/Blocks.php:48
+msgid "A demo block to show that everything is working."
+msgstr "Ein Demoblock, um zu zeigen, dass alles funktioniert."
+
+#: inc/Blocks/Blocks.php:51
+msgid "ACF"
+msgstr "ACF"
+
+#: inc/Blocks/Blocks.php:51
+msgid "Demo"
+msgstr "Demo"
+
+#: inc/Blocks/Blocks.php:51
+msgid "Block"
+msgstr "Block"
+
+#: inc/SVG/SVG.php:51 inc/SVG/SVG.php:56 inc/SVG/SVG.php:61
+msgid "Slashes"
+msgstr "Slashes"
+
+#: admin/dist/js/blocks.js:39
+msgid "This block is made with ♥ by "
+msgstr "Dieser Block wurde mit ♥ erstellt von "
+
+#: admin/dist/js/blocks.js:49
+msgid "Settings"
+msgstr "Einstellungen"
+
+#: blocks/demo/block.json
+msgctxt "block title"
+msgid "Demo Block"
+msgstr "Demo Block"
+
+#: blocks/demo/block.json
+msgctxt "block description"
+msgid "A demo block"
+msgstr "Ein Demo-Block"
