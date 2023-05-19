@@ -109,6 +109,7 @@ jobs:
         env:
           SVN_PASSWORD: ${{ secrets.WPM_SVN_PASSWORD }}
           SVN_USERNAME: ${{ secrets.WPM_SVN_USERNAME }}
+          VERSION: ${{ steps.version.outputs.version }}
           SLUG: citations
           BUILD_DIR: ./plugin
 
