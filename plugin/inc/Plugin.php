@@ -23,10 +23,20 @@ class Plugin {
 	private $blocks;
 
 	/**
+	 * The Citations component.
+	 *
+	 * @var Citations\Citations
+	 */
+	private $citations;
+
+	/**
 	 * Constructor.
 	 */
 	public function __construct() {
-		$this->blocks = new Blocks\Blocks();
+		$this->blocks    = new Blocks\Blocks();
+		$this->citations = new Citations\Citations();
+
+		add_action( 'init', array( $this, 'register_styles' ) );
 	}
 
 	/**
@@ -82,5 +92,27 @@ class Plugin {
 	 */
 	public function get_plugin_slug() {
 		return 'citations';
+	}
+
+	/**
+	 * Get the citations component.
+	 *
+	 * @return Citations\Citations The citations component.
+	 */
+	public function citations() {
+		return $this->citations;
+	}
+
+	/**
+	 * Register styles needed for the plugin.
+	 */
+	public function register_styles() {
+		wp_register_style(
+			'citations',
+			lh_plugin()->get_plugin_url() . '/dist/css/style.min.css',
+			array(),
+			lh_plugin()->get_plugin_version(),
+			'all'
+		);
 	}
 }

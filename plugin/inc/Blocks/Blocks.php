@@ -76,14 +76,6 @@ class Blocks {
 			'all'
 		);
 
-		wp_register_style(
-			'citations',
-			lh_plugin()->get_plugin_url() . '/dist/css/style.min.css',
-			array(),
-			lh_plugin()->get_plugin_version(),
-			'all'
-		);
-
 		/**
 		 * Load the translations for the block editor assets.
 		 */
@@ -119,6 +111,9 @@ class Blocks {
 		switch ( $block->name ) {
 			case 'lh/demo':
 				include $blocks_path . 'demo/template.php';
+				break;
+			case 'lh/bibliography':
+				include $blocks_path . 'bibliography/template.php';
 				break;
 		}
 

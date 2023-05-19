@@ -13,7 +13,6 @@
 				float: left;
 				display: inline-block;
 				text-decoration: none;
-				color: inherit;
 				font-size: 0.5em;
 				vertical-align: super;
 			}
@@ -24,6 +23,12 @@
 			}
 		}
 	}
+}
+
+a.js--wpm-format-cite-link {
+	vertical-align: super;
+	font-size: 0.5em;
+	text-decoration: none;
 }
 
 /**
