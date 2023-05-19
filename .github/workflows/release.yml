@@ -101,32 +101,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GH_ADMIN_TOKEN }}
 
-      - name: 🏗️ WordPress Plugin Deploy
-        uses: 10up/action-wordpress-plugin-deploy@stable
-        with:
-          generate-zip: true
-          dry-run: true
-        env:
-          SVN_PASSWORD: ${{ secrets.WPM_SVN_PASSWORD }}
-          SVN_USERNAME: ${{ secrets.WPM_SVN_USERNAME }}
-          VERSION: ${{ steps.version.outputs.version }}
-          SLUG: citations
-          BUILD_DIR: ./plugin
-
       - name: 🚀 Create Release
         id: create_release
         uses: softprops/action-gh-release@v1
         with:
           body: |
             ${{ steps.changelog.outputs.log }}
+          files: ./archives/*.zip
           tag_name: v${{ steps.version.outputs.version }}
 
-      - name: 🏋️ Upload release asset
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ github.event.release.upload_url }}
-          asset_path: ${{ steps.deploy.outputs.zip-path }}
-          asset_name: ${{ github.event.repository.name }}.zip
-          asset_content_type: application/zip
