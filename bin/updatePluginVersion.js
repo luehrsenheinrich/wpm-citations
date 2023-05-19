@@ -28,7 +28,7 @@ fs.readFile(`./plugin/${pkg.slug}.php`, (err, data) => {
 	const newData = data.toString().replace(versionRowRegex, newVersionRow);
 
 	// Write the new content to the file.
-	fs.writeFile(`./plugin/${pkg.slug}p.php`, newData, () => {
+	fs.writeFile(`./plugin/${pkg.slug}.php`, newData, () => {
 		console.log(`Plugin version in ${pkg.slug}.php updated.`);
 		if (err) {
 			console.error(err);
