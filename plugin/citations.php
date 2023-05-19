@@ -9,7 +9,7 @@
  * Description: This WordPress Plugin introduces advanced citation capabilities to the WordPress Block Editor.
  * Author: WP Munich
  * Author URI: https://www.wp-munich.com
- * Version: 0.0.19
+ * Version: 0.0.20
  * Text Domain: citations
  */
 
