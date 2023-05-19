@@ -12,7 +12,7 @@
 const fs = require('fs');
 const pkg = require('../package.json');
 
-fs.readFile(`./plugin/${pkg.slug}p.php`, (err, data) => {
+fs.readFile(`./plugin/${pkg.slug}.php`, (err, data) => {
 	if (err) {
 		console.error(err);
 		return;
