@@ -76,6 +76,14 @@ class Blocks {
 			'all'
 		);
 
+		wp_register_style(
+			'citations',
+			lh_plugin()->get_plugin_url() . '/dist/css/style.min.css',
+			array(),
+			lh_plugin()->get_plugin_version(),
+			'all'
+		);
+
 		/**
 		 * Load the translations for the block editor assets.
 		 */

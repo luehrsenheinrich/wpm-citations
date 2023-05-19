@@ -16,5 +16,6 @@
 	},
   "attributes": {},
   "example": {},
-  "editorScript": "citations-blocks"
+  "editorScript": "citations-blocks",
+  "style": "citations"
 }

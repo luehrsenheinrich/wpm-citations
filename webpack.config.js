@@ -38,6 +38,20 @@ const PluginBackendCSS = globSync('./plugin/admin/src/css/*.css').reduce(
 );
 
 /**
+ * Plugin frontend CSS files
+ *
+ * @type {string[]}
+ */
+const PluginFrontendCSS = globSync('./plugin/src/css/*.css').reduce(function (
+	obj,
+	el
+) {
+	obj['css/' + path.parse(el).name + '.min'] = el;
+	return obj;
+},
+{});
+
+/**
  * The WordPress JS loader.
  * The opinionated WordPress JS loader. We only use this within the WordPress admin.
  *
@@ -157,6 +171,41 @@ const pluginBackendWebpackOptions = {
 	],
 };
 
-module.exports = [
-	pluginBackendWebpackOptions,
-];
+/**
+ * The default JS loader.
+ * This is a very vanilla JS loader based on Babel preset-env.
+ *
+ * @type {Object}
+ */
+const defaultJsLoader = {
+	test: /\.js$/,
+	exclude: /node_modules/,
+	use: {
+		loader: 'babel-loader',
+		options: {
+			presets: ['@babel/preset-env'],
+		},
+	},
+};
+
+/**
+ * The webpack config to bundle CSS and JS for the Theme frontend.
+ *
+ * @type {Object}
+ */
+const pluginFrontendWebpackOptions = {
+	...defaultConfig,
+	name: 'pluginFrontend',
+	entry: {
+		...PluginFrontendCSS,
+	},
+	output: {
+		...defaultConfig.output,
+		path: path.resolve(__dirname, 'plugin/dist'),
+	},
+	module: {
+		rules: [...defaultConfig.module.rules, defaultJsLoader],
+	},
+};
+
+module.exports = [pluginBackendWebpackOptions, pluginFrontendWebpackOptions];

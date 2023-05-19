@@ -1,0 +1,41 @@
+.lh-bibliography-block {
+
+	& .lh-bibliography-block--citations {
+		list-style: none;
+		padding-left: 0;
+
+		& .lh-bibliography-block--citation {
+			margin: 0;
+			padding: 0;
+
+			& .lh-bibliography-block--citation-link {
+				font-variant-numeric: tabular-nums;
+				float: left;
+				display: inline-block;
+				text-decoration: none;
+				color: inherit;
+				font-size: 0.5em;
+				vertical-align: super;
+			}
+
+			& .lh-bibliography-block--citation-text {
+				display: block;
+				margin-left: 1em;
+			}
+		}
+	}
+}
+
+/**
+ * Background padding
+ * This should not be hardcoded. There should be a variable
+ * in Gutenberg, that should expose the padding for blocks.
+ *
+ * @see https://github.com/WordPress/gutenberg/blob/5e1a0a8deadd28b747bffdddb4b576bfbac72829/packages/base-styles/_variables.scss#L104
+ */
+:where(.lh-bibliography-block.has-background) {
+	--block-bg-padding--v: 1.25em;
+	--block-bg-padding--h: 2.375em;
+
+	padding: var(--block-bg-padding--v) var(--block-bg-padding--h);
+}
