@@ -7,7 +7,7 @@
   "scripts": {
     "build": "webpack",
     "release:build": "webpack --mode='production'",
-    "release:version": "node ./bin/updatePluginVersion.js && node ./bin/updateThemeVersion.js",
+    "release:version": "node ./bin/updatePluginVersion.js",
     "release:package": "node ./bin/archiveProject.js",
     "release": "npm run release:build && npm run release:version && npm run release:package",
     "prestart": "npm install && composer install && npm run build",
