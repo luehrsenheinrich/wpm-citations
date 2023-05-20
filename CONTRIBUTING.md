@@ -14,17 +14,15 @@ If you’re filing a bug, specific steps to reproduce are helpful. Please includ
 
 If you want to contribute code to the project you have to set up the environment locally. Make sure that you have `node`, `npm`, `docker` and `webpack` installed.
 
-The working directories are the `theme` & `plugin` directories. If you change something in another location of the repository the pull request will be ignored.
-
 The development server and all dependencies are handled by [@wordpress/env](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-env/). Make sure you have [docker installed](https://docs.docker.com/compose/install/) and run `npm start` in the directory. Your spawned WordPress instance will be available under `http://localhost` with the account `admin:password`.
-
-Please be aware, that you should usually not write code directly on the main branch.
 
 Start the watcher with the terminal command `npm run watch`. Webpack will make sure that the code will be compiled and that your browser gets a [LiveReload](http://livereload.com/extensions/) command.
 
 Before committing execute the command `npm run test` to test if your code follows the general coding standards.
 
 This project uses the `@wordpress\env` package to provide the development server. Please refer to the [`wp-env`-documentation](https://github.com/WordPress/gutenberg/tree/master/packages/env) for more details.
+
+Please be aware, that you should usually not write code directly on the main branch.
 
 ## I'm stuck, what do I do?
 
@@ -39,8 +37,8 @@ Not knowing what to do is perfectly normal for any developer or programmer. One 
 To keep the work in this repository structured and maintainable, we follow a certain way to add changes and code. A good workflow is structured like this:
 
 1. Write or take an issue about the problem you want to solve
-2. Add your own branch to the repository and add code to this branch
-3. As soon as you have a presentable solution, add a pull request to the master branch
+2. Add your own branch to the repository or a fork and add code to this branch
+3. As soon as you have a presentable solution, add a pull request towards the master branch
 4. Get reviews for your solution and make sure the automated tests pass
 5. Before merging the PR to the master branch, update your branch from master to resolve conflicts
 6. Merge the PR into the master branch, test the solution and delete your branch
@@ -62,4 +60,4 @@ The release workflow is more or less automated. A github workflow takes the code
 
 Please refer to the documentation of [npm version](https://docs.npmjs.com/cli/v7/commands/npm-version) to learn more about how to set the version. In determining which version should be the next one we try to follow the SemVer Specification. Read [more about that here](https://semver.org/).
 
-While theoretically everyone with write access to the repository has the ability to push a release, the release should only be done by one person, either the *build master* or the *project manager*.
+While theoretically everyone with write access to the repository has the ability to push a release, the release should only be done by one person, either the *build manager* or the *project manager*.
