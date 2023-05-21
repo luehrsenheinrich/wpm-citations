@@ -26,13 +26,6 @@ class Blocks {
 	 */
 	public function register_blocks() {
 		register_block_type(
-			CITATIONS_DIR . 'blocks/demo',
-			array(
-				'render_callback' => array( $this, 'provide_render_callback' ),
-			)
-		);
-
-		register_block_type(
 			CITATIONS_DIR . 'blocks/bibliography',
 			array(
 				'render_callback' => array( $this, 'provide_render_callback' ),
@@ -109,9 +102,6 @@ class Blocks {
 		ob_start();
 
 		switch ( $block->name ) {
-			case 'lh/demo':
-				include $blocks_path . 'demo/template.php';
-				break;
 			case 'lh/bibliography':
 				include $blocks_path . 'bibliography/template.php';
 				break;
