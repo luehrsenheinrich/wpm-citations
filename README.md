@@ -48,6 +48,13 @@ This WordPress project is made with love and brought to you by the folks of [WP 
 1. Make the necessary changes in the pop-up that appears.
 1. Click on Save or Update to apply your changes.
 
+### Using the Demo-Pattern
+
+1. Click on the + icon in the editor toolbar to add a new pattern to your post.
+2. Search for "Citations Demo" in the pattern search bar.
+3. Click on the "Citations Demo" pattern to add it to your post.
+4. A few lines of filler text with pre-defined citations and a bibliography block will appear in your post content.
+
 ## Contributing
 
 Every bit of help is highly appreciated. Even if you don't code you can file an issue and help us find bugs or shape new features. Please see the [CONTRIBUTING.md](./CONTRIBUTING.md) on how to contribute.
