@@ -30,11 +30,19 @@ class Plugin {
 	private $citations;
 
 	/**
+	 * The Patterns component.
+	 *
+	 * @var Patterns\Patterns
+	 */
+	private $patterns;
+
+	/**
 	 * Constructor.
 	 */
 	public function __construct() {
 		$this->blocks    = new Blocks\Blocks();
 		$this->citations = new Citations\Citations();
+		$this->patterns  = new Patterns\Patterns();
 
 		add_action( 'init', array( $this, 'register_styles' ) );
 	}
