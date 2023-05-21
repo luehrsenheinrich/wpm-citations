@@ -23,7 +23,7 @@ This WordPress project is made with love and brought to you by the folks of [WP 
 
 #### Manually 
 
-1. Download the `citations.zip` from our [most recent release](https://github.com/luehrsenheinrich/wpm-citations/releases/latest).
+1. Download the `citations.zip` from our [most recent release](./../../releases/latest).
 1. Visit \'Plugins > Add New\'
 2. Click the 'Add new' button.
 3. Upload the `citations.zip` archive to your WordPress
@@ -54,6 +54,12 @@ This WordPress project is made with love and brought to you by the folks of [WP 
 2. Search for "Citations Demo" in the pattern search bar.
 3. Click on the "Citations Demo" pattern to add it to your post.
 4. A few lines of filler text with pre-defined citations and a bibliography block will appear in your post content.
+
+### Screenshots
+
+| The Bibliography Block | The Citations Rich Text Format |
+|---|---|
+| ![The Bibliography Block](./.wordpress-org/screenshot-1.png) | ![The Citations Rich Text Format](./.wordpress-org/screenshot-2.png) |
 
 ## Contributing
 
