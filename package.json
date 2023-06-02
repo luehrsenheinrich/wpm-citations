@@ -28,7 +28,7 @@
     "fix:js": "eslint './plugin/**/src/js/**/*.js' --fix",
     "lint:fix": "npm run lint:php:fix && npm run lint:js:fix && npm run lint:css:fix",
     "dev": "npm run start && npm run watch",
-    "test": "npm run lint",
+    "test": "npm run lint && npm run test:unit:env",
     "test:unit:env": "wp-env run --env-cwd='wp-content/plugins/plugin' tests-cli vendor/bin/phpunit -c phpunit.xml --verbose",
     "preversion": "npm run test",
     "version": "npm run release && git add -A"
