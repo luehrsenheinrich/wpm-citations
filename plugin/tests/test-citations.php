@@ -1,6 +1,6 @@
 <?php
 /**
- * The basic tests for the plugin.
+ * The basic tests for the citations.php file.
  *
  * @package citations
  */
