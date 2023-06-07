@@ -13,6 +13,9 @@
 /plugin/admin/dist
 /plugin/vendor
 
+# phpunit
+.phpunit.result.cache
+
 # OS
 .DS_Store
 Thumbs.db

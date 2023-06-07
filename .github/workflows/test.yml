@@ -3,7 +3,7 @@
 # It assumes that `npm install`, `composer install` and `npx grunt release` are valid commands.
 # The action expects a valid zip file in the `./update/` folder and the `slug` key in the
 # `package.json` to be set.
-name: 🏗 Build & Deploy
+name: 🧪 Test
 
 on:
   push:
@@ -56,23 +56,8 @@ jobs:
           key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
           restore-keys: ${{ runner.os }}-composer-
 
-      - name: ⚙️ Install Composer Packages
-        run: composer install --prefer-dist
+      - name: 🚀 Start the environment
+        run: npm start
 
-      - name: ⚙️ Install Node Packages
-        run: npm ci
-
-      - name: 🔎 Lint the code
-        run: npm run lint
-
-      - name: 🏗 Build the code release
-        run: npm run release
-
-#      - name: 🚢 Deploy to Devserv
-#        if: ${{ github.event_name == 'push' && success() }}
-#        uses: SamKirkland/FTP-Deploy-Action@4.2.0
-#        with:
-#          server: ${{ secrets.devservFtpHost }}
-#          username: ${{ secrets.devservFtpUser }}
-#          password: ${{ secrets.devservFtpPassword }}
-#          local-dir: ./trunk/
+      - name: 🧪 Run tests
+        run: npm test

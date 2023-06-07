@@ -2,8 +2,6 @@
   "name": "wpmunich/citations",
   "type": "wordpress-plugin",
   "optimize-autoloader": true,
-  "require": {
-  },
   "autoload": {
     "psr-4": {
       "WpMunich\\citations\\": "inc/"
@@ -13,5 +11,8 @@
     "platform": {
       "php": "8.1"
     }
+  },
+  "require-dev": {
+    "yoast/phpunit-polyfills": "^1.0"
   }
 }

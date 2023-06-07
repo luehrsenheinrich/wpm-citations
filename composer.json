@@ -11,7 +11,8 @@
 		"wp-coding-standards/wpcs": "^2.3",
 		"wptrt/wpthemereview": "dev-develop",
 		"phpcompatibility/phpcompatibility-wp": "^2.1",
-		"wp-cli/wp-cli-bundle": "^2.7"
+		"wp-cli/wp-cli-bundle": "^2.7",
+		"php-stubs/wordpress-tests-stubs": "^6.2"
 	},
 	"scripts": {
 		"lint": "phpcs -d memory_limit=-1",
