@@ -80,6 +80,9 @@ jobs:
         id: changelog
         run: |
           log=$(git log $(git describe --tags --abbrev=0)..HEAD --pretty=format:'* %s (%h)')
+          log="${log//'%'/'%25'}"
+          log="${log//$'\n'/'<br/>'}"
+          log="${log//$'\r'/'<br/>'}"
           echo "log=$log" >> $GITHUB_OUTPUT
 
       - name: Check Status
