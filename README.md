@@ -1,6 +1,6 @@
 # Citations for WordPress
 
-[![🏗 Build & Deploy](../../actions/workflows/main.yml/badge.svg)](../../actions/workflows/main.yml)
+[![Test](../../actions/workflows/test.yml/badge.svg)](../../actions/workflows/test.yml)
 
 This WordPress plugin introduces practical citation functionality to the WordPress Block Editor, aiming to streamline the process of adding references to your content.
 
