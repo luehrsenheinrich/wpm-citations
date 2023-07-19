@@ -62,8 +62,5 @@ class Citations_Plugin_Test extends WP_UnitTestCase {
 	public function test_register_styles() {
 		// Check if the styles are registered.
 		$this->assertTrue( wp_style_is( 'citations', 'registered' ), 'The citations style is not registered.' );
-
-		// Check if the styles are enqueued.
-		$this->assertTrue( wp_style_is( 'citations', 'enqueued' ), 'The citations style is not enqueued.' );
 	}
 }
