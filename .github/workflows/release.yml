@@ -81,6 +81,7 @@ jobs:
         run: |
           log=$(git log $(git describe --tags --abbrev=0)..HEAD --pretty=format:'* %s (%h)')
           log="${log//'%'/'%25'}"
+          log="${log//$'\n'/"%0A"}"
           log="${log//$'\r'/'%0D'}"
           echo "log=$log" >> $GITHUB_OUTPUT
 
@@ -104,8 +105,7 @@ jobs:
         id: create_release
         uses: softprops/action-gh-release@v1
         with:
-          body: |
-            ${{ steps.changelog.outputs.log }}
+          body: ${{ steps.changelog.outputs.log }}
           files: ./archives/*.zip
           tag_name: v${{ steps.version.outputs.version }}
 
