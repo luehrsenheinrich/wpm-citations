@@ -81,8 +81,8 @@ jobs:
         run: |
           log=$(git log $(git describe --tags --abbrev=0)..HEAD --pretty=format:'* %s (%h)')
           log="${log//'%'/'%25'}"
-          log="${log//$'\n'/'<br/>'}"
-          log="${log//$'\r'/'<br/>'}"
+          log="${log//$'\n'/'%0D'}"
+          log="${log//$'\r'/'%0D'}"
           echo "log=$log" >> $GITHUB_OUTPUT
 
       - name: Check Status
