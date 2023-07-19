@@ -79,10 +79,13 @@ jobs:
         shell: bash
         id: changelog
         run: |
-          log=$(git log $(git describe --tags --abbrev=0)..HEAD --pretty=format:'* %s (%h)')
-          log="${log//$'%'/%25}"
-          log="${log//$'\n'/%0A}"
-          log="${log//$'\r'/%0D}"
+          # Get the latest tag
+          latestTag=$(git describe --tags --abbrev=0)
+
+          # Get the log from the latest tag to now
+          log=$(git log --pretty=format:"%h - %s (%an)" $latestTag..HEAD)
+
+          # Set the output variable for use in other steps
           echo "log=$log" >> $GITHUB_OUTPUT
 
       - name: Check Status
