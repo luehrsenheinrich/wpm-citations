@@ -2,7 +2,7 @@
   "name": "wp-project-boilerplate",
   "title": "WordPress Project Boilerplate",
   "slug": "citations",
-  "version": "0.0.20",
+  "version": "0.0.21",
   "description": "A base boilerplate for Luehrsen // Heinrich WordPress projects. ",
   "scripts": {
     "build": "webpack",
