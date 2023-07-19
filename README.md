@@ -13,7 +13,6 @@ This WordPress project is made with love and brought to you by the folks of [WP 
 
 ## How to use this WordPress Plugin
 
-
 ### Installation
 
 #### From within WordPress (when the Plugin is reviewed and released)
