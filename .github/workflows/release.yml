@@ -79,11 +79,11 @@ jobs:
         shell: bash
         id: changelog
         run: |
+          EOF=$(dd if=/dev/urandom bs=15 count=1 status=none | base64)
           log=$(git log $(git describe --tags --abbrev=0)..HEAD --pretty=format:'* %s (%h)')
-          log="${log//'%'/'%25'}"
-          log="${log//$'\n'/'%0A'}"
-          log="${log//$'\r'/'%0D'}"
-          echo "log=$log" >> $GITHUB_OUTPUT
+          echo "CHANGELOG<<$EOF" >> $GITHUB_ENV
+          echo "$log" >> $GITHUB_ENV
+          echo "$EOF" >> $GITHUB_ENV
 
       - name: Check Status
         run: git status
@@ -106,7 +106,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           body: |
-            ${{ steps.changelog.outputs.log }}
+            ${{ env.CHANGELOG }}
           files: ./archives/*.zip
           tag_name: v${{ steps.version.outputs.version }}
 

@@ -21,7 +21,7 @@ This WordPress project is made with love and brought to you by the folks of [WP 
 1. Search for \'Citations\'
 1. Activate \'Citations\' from your Plugins page.
 
-#### Manually 
+#### Manually
 
 1. Download the `citations.zip` from our [most recent release](./../../releases/latest).
 1. Visit \'Plugins > Add New\'
