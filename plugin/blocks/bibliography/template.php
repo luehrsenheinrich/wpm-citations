@@ -10,6 +10,7 @@
  */
 
 use function WpMunich\citations\lh_plugin;
+use function WpMunich\citations\classNames;
 
 $attrs = apply_filters( 'lh_normalize_block_attributes', $attributes, $block->name );
 
@@ -28,7 +29,7 @@ $block_classes = classNames(
 	'lh-bibliography-block',
 	array(
 		'align' . $align                                 => $align,
-		'has-background'                                 => $background_color || $text_color,
+		'has-background'                                 => $background_color,
 		'has-' . $background_color . '-background-color' => $background_color,
 		'has-' . $text_color . '-color'                  => $text_color,
 	)
@@ -51,7 +52,7 @@ $block_wrapper_attributes = array(
 );
 
 ?>
-<div <?php echo get_block_wrapper_attributes( $block_wrapper_attributes ); ?>>
+<div <?php echo wp_kses_data( get_block_wrapper_attributes( $block_wrapper_attributes ) ); ?>>
 	<ul class="lh-bibliography-block--citations">
 		<?php foreach ( $citations as $i => $citation ) : ?>
 			<li class="lh-bibliography-block--citation" id="wpm-citation-source-<?php echo esc_attr( $i + 1 ); ?>">
