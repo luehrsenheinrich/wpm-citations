@@ -88,6 +88,9 @@ jobs:
       - name: Check Status
         run: git status
 
+      - name: 🚀 Start the environment
+        run: npm start
+
       - name: 🔼 Bump version
         run: npm version ${{ github.event.inputs.version }} -m 'Tagging %s'
 
