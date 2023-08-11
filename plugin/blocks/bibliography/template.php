@@ -29,7 +29,7 @@ $block_classes = classNames(
 	'lh-bibliography-block',
 	array(
 		'align' . $align                                 => $align,
-		'has-background'                                 => $background_color || $text_color,
+		'has-background'                                 => $background_color,
 		'has-' . $background_color . '-background-color' => $background_color,
 		'has-' . $text_color . '-color'                  => $text_color,
 	)
