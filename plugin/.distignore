@@ -1,2 +1,5 @@
 composer.json
 composer.lock
+tests/
+.phpunit.result.cache
+phpunit.xml
