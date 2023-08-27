@@ -52,3 +52,11 @@ This Plugin introduces practical citation functionality to the WordPress Block E
 
 1. Upload the `citations` folder to the `/wp-content/plugins/` directory
 1. Activate the \'Citations\' plugin through the \'Plugins\' menu in WordPress
+
+== Screenshots ==
+1. The Bibliography Block
+2. The Citations Rich Text Format
+
+== Changelog ==
+
+A comprehensive changelog can be found in the [releases section of the plugin's GitHub repository](https://github.com/luehrsenheinrich/wpm-citations/releases).
