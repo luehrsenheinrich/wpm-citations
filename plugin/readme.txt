@@ -5,7 +5,7 @@ Requires at least: 6.2
 Requires PHP: 7.2
 License: GNU General Public License v2.0
 License URI: https://github.com/luehrsenheinrich/wpm-citations/blob/main/LICENSE
-Stable tag: 0.0.30
+Stable tag: 0.0.31
 Tested up to: 6.3
 
 Introduces advanced citation capabilities to the WordPress Block Editor.
