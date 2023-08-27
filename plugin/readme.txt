@@ -5,7 +5,7 @@ Requires at least: 6.2
 Requires PHP: 7.2
 License: GNU General Public License v2.0
 License URI: https://github.com/luehrsenheinrich/wpm-citations/blob/main/LICENSE
-Stable tag: 0.1.0
+Stable tag: 0.1.1
 Tested up to: 6.3
 
 This Plugin introduces practical citation functionality to the WordPress Block Editor, aiming to streamline the process of adding references to your content.
