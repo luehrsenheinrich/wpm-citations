@@ -118,6 +118,7 @@ jobs:
         with:
           dry-run: true
         env:
+          VERSION: ${{ steps.version.outputs.version }}
           SVN_PASSWORD: ${{ secrets.WPM_SVN_PASSWORD }}
           SVN_USERNAME: ${{ secrets.WPM_SVN_USERNAME }}
           SLUG: citations
