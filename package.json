@@ -2,7 +2,7 @@
   "name": "wpm-citations-package",
   "title": "The package for the Citations Plugin",
   "slug": "citations",
-  "version": "0.0.31",
+  "version": "0.0.32",
   "description": "The package that provides the Citations Plugin for WordPress.",
   "scripts": {
     "build": "webpack",
