@@ -1,0 +1,5 @@
+./plugin/composer.json
+./plugin/composer.lock
+./plugin/tests/
+./plugin/phpunit.result.cache
+./plugin/phpunit.xml
