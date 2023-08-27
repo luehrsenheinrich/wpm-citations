@@ -113,13 +113,13 @@ jobs:
           files: ./archives/*.zip
           tag_name: v${{ steps.version.outputs.version }}
 
-    - name: WordPress Plugin Deploy
-      uses: 10up/action-wordpress-plugin-deploy@stable
-      with:
-        dry-run: true
-      env:
-        SVN_PASSWORD: ${{ secrets.WPM_SVN_PASSWORD }}
-        SVN_USERNAME: ${{ secrets.WPM_SVN_USERNAME }}
-        SLUG: citations
-        BUILD_DIR: ./plugin
+      - name: WordPress Plugin Deploy
+        uses: 10up/action-wordpress-plugin-deploy@stable
+        with:
+          dry-run: true
+        env:
+          SVN_PASSWORD: ${{ secrets.WPM_SVN_PASSWORD }}
+          SVN_USERNAME: ${{ secrets.WPM_SVN_USERNAME }}
+          SLUG: citations
+          BUILD_DIR: ./plugin
 
