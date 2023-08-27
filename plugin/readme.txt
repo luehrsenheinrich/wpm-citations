@@ -44,14 +44,14 @@ This Plugin introduces practical citation functionality to the WordPress Block E
 == Installation ==
 = From within WordPress =
 
-1. Visit \'Plugins > Add New\'
-1. Search for \'Citations\'
-1. Activate \'Citations\' from your Plugins page.
+1. Visit 'Plugins > Add New'
+1. Search for 'Citations'
+1. Activate 'Citations' from your Plugins page.
 
 = Manually =
 
 1. Upload the `citations` folder to the `/wp-content/plugins/` directory
-1. Activate the \'Citations\' plugin through the \'Plugins\' menu in WordPress
+1. Activate the 'Citations' plugin through the 'Plugins' menu in WordPress
 
 == Screenshots ==
 1. The Bibliography Block
