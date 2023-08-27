@@ -52,8 +52,9 @@ const createArchive = (path, srcPath, slug) => {
 		// Finalize the archive
 		archive.finalize();
 	} catch (error) {
+		// eslint-disable-next-line no-console
 		console.error(error);
 	}
 };
 
-createArchive('./archives', './plugin', pkg.slug );
+createArchive('./archives', './plugin', pkg.slug);

@@ -2,6 +2,7 @@
 /wp/
 /vendor/
 /archives/*.zip
+/.wordpress-org-plugin
 
 # THEME
 /theme/dist

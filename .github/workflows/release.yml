@@ -113,6 +113,9 @@ jobs:
           files: ./archives/*.zip
           tag_name: v${{ steps.version.outputs.version }}
 
+      - name: Prepare the release to the WordPress Plugin Repository
+        run: npm run release:prepareWpRelease
+
       - name: WordPress Plugin Deploy
         uses: 10up/action-wordpress-plugin-deploy@stable
         with:
@@ -122,5 +125,5 @@ jobs:
           SVN_PASSWORD: ${{ secrets.WPM_SVN_PASSWORD }}
           SVN_USERNAME: ${{ secrets.WPM_SVN_USERNAME }}
           SLUG: citations
-          BUILD_DIR: ./plugin
+          BUILD_DIR: ./.wordpress-org-plugin
 

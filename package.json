@@ -10,6 +10,7 @@
     "release:version": "node ./bin/updatePluginVersion.js",
     "release:package": "node ./bin/archiveProject.js",
     "release:wpTested": "node ./bin/updateWordPressTestedVersion.js",
+    "release:prepareWpRelease": "node ./bin/prepareWpRelease.js",
     "release:composer": "cd plugin && composer u --no-dev -o",
     "release": "npm run release:build && npm run release:composer && npm run release:version && npm run release:wpTested && npm run release:package",
     "prestart": "npm install && composer install && npm run build",
