@@ -1,8 +1,9 @@
 name: 🚀 Plugin asset/readme update
 on:
-  push:
-    branches:
-    - trunk
+  # This action is triggered manually.
+  workflow_dispatch:
+    inputs:
+
 jobs:
   trunk:
     name: Push to trunk
