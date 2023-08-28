@@ -1,6 +1,9 @@
 # Citations for WordPress
 
 [![Test](../../actions/workflows/test.yml/badge.svg)](../../actions/workflows/test.yml)
+![WordPress Plugin Downloads](https://img.shields.io/wordpress/plugin/dt/citations)
+![WordPress Plugin Version](https://img.shields.io/wordpress/plugin/v/citations)
+![WordPress Plugin Rating](https://img.shields.io/wordpress/plugin/stars/citations)
 
 ![Citations for WordPress](https://raw.githubusercontent.com/luehrsenheinrich/wpm-citations/main/.wordpress-org/banner-1544x500.png)
 
