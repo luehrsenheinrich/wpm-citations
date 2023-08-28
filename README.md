@@ -2,6 +2,8 @@
 
 [![Test](../../actions/workflows/test.yml/badge.svg)](../../actions/workflows/test.yml)
 
+![Citations for WordPress](https://raw.githubusercontent.com/luehrsenheinrich/wpm-citations/main/.wordpress-org/banner-1544x500.png)
+
 This WordPress plugin introduces practical citation functionality to the WordPress Block Editor, aiming to streamline the process of adding references to your content.
 
 This WordPress project is made with love and brought to you by the folks of [WP Munich](http://www.wp-munich.com) and [Luehrsen // Heinrich](http://www.luehrsen-heinrich.de).
