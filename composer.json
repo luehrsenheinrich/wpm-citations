@@ -12,7 +12,8 @@
 		"wptrt/wpthemereview": "dev-develop",
 		"phpcompatibility/phpcompatibility-wp": "^2.1",
 		"wp-cli/wp-cli-bundle": "^2.7",
-		"php-stubs/wordpress-tests-stubs": "^6.2"
+		"php-stubs/wordpress-tests-stubs": "^6.2",
+		"php-stubs/wordpress-stubs": "^6.3"
 	},
 	"scripts": {
 		"lint": "phpcs -d memory_limit=-1",
