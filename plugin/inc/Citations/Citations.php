@@ -80,47 +80,55 @@ class Citations {
 		}
 
 		/**
-		 * Initialize the DOMDocument.
+		 * Use regex to find all span tags with the class js--wpm-format-cite.
+		 * The class attribute can be anywhere in the tag. Catch the whole tag.
 		 */
-		$doc = new \DOMDocument();
+		$pattern = '/<span[^>]*class=[\'"]*js--wpm-format-cite[\'"]*[^>]*>(.*?)<\/span>/i';
+		$content = preg_replace_callback( $pattern, array( $this, 'replace_citation' ), $content );
+
+		return $content;
+	}
+
+	/**
+	 * Replaces the citation with the bibliography.
+	 *
+	 * @param array $match The match.
+	 *
+	 * @return string
+	 */
+	private function replace_citation( $match ) {
+		$whole_tag   = $match[0];
+		$tag_content = $match[1];
 
 		/**
-		 * Load the block content into a DOMDocument.
-		 * We cannot just load the block content as is, as it will be cast as ISO-8859-1. We need to
-		 * tell the DOMDocument to use UTF-8.
+		 * The number of citations we have so far.
 		 */
-		libxml_use_internal_errors( true );
-		$doc->loadHTML( '<?xml encoding="utf-8" ?>' . $content );
-		libxml_clear_errors();
-
-		$doc->removeChild( $doc->childNodes->item( 1 ) );
-
-		$finder = new \DOMXPath( $doc );
+		$citation_count = count( $this->citations );
 
 		/**
-		 * Find all the citation elements.
+		 * The human readable citation number. (We start with 1)
 		 */
-		$citations = $finder->query( '//*[@class="js--wpm-format-cite"]' );
-
-		$citation_link = $doc->createElement( 'a' );
-		$citation_link->setAttribute( 'class', 'js--wpm-format-cite-link' );
-		$citation_link->setAttribute( 'href', '#' );
+		$c = $citation_count + 1;
 
 		/**
-		 * Loop through all the citation elements.
+		 * Compile the citation link, that links to the bibliography.
 		 */
-		foreach ( $citations as $citation ) {
-			$specific_link = $citation_link->cloneNode( true );
-			$specific_link->setAttribute( 'id', 'wpm-citation-' . ( count( $this->citations ) + 1 ) );
-			$specific_link->setAttribute( 'href', '#wpm-citation-source-' . ( count( $this->citations ) + 1 ) );
+		$citations_tag = '<a href="#wpm-citation-source-' . $c . '" id="wpm-citation-' . $c . '" class="js--wpm-format-cite-link">[' . $c . ']</a>';
 
-			// phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
-			$specific_link->nodeValue = '[' . ( count( $this->citations ) + 1 ) . ']';
-
-			$citation->appendChild( $specific_link );
-			$this->citations[] = $citation->attributes->getNamedItem( 'data-cite-text' )->nodeValue;
+		/**
+		 * Use regex to fetch the 'data-cite-text' attribute from the tag.
+		 */
+		$pattern = '/data-cite-text=[\'"]([^\'"]*)[\'"]/i';
+		preg_match( $pattern, $whole_tag, $matches );
+		if ( ! empty( $matches[1] ) ) {
+			$citation = $matches[1];
 		}
 
-		return $doc->saveHTML();
+		/**
+		 * Add the citation to the citations array.
+		 */
+		$this->citations[] = $citation;
+
+		return str_replace( $tag_content, $tag_content . $citations_tag, $whole_tag );
 	}
 }
