@@ -90,7 +90,7 @@ class Citations {
 	}
 
 	/**
-	 * Replaces the citation with the bibliography.
+	 * Modifies the citation and adds it to the bibliography.
 	 *
 	 * @param array $match The match.
 	 *
