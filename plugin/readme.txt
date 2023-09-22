@@ -17,7 +17,7 @@ This Plugin introduces practical citation functionality to the WordPress Block E
 
 ### [Try now on WordPress Playground!](https://playground.wordpress.net/?plugin=citations&url=/wp-admin/post-new.php)
 
-## How to use:
+## How to use
 
 ### Creating In-Text Citations
 1. Navigate to the Posts section of your WordPress dashboard.
@@ -44,6 +44,9 @@ This Plugin introduces practical citation functionality to the WordPress Block E
 2. Search for "Citations Demo" in the pattern search bar.
 3. Click on the "Citations Demo" pattern to add it to your post.
 4. A few lines of filler text with pre-defined citations and a bibliography block will appear in your post content.
+
+## Contributing
+If you are a developer, we encourage you to follow along or [contribute](https://github.com/luehrsenheinrich/wpm-citations) to the development of this plugin [on GitHub](https://github.com/luehrsenheinrich/wpm-citations).
 
 == Installation ==
 = From within WordPress =
