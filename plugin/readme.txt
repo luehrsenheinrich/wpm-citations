@@ -15,6 +15,10 @@ This Plugin introduces practical citation functionality to the WordPress Block E
 1.  **Cite Rich Text Format**: This feature lets users mark citations in their text and assign them a specific source. This makes adding citations straightforward, enhancing the clarity and reliability of your content.
 2.  **Bibliography Block**: This plugin also offers a bibliography block that displays all referenced sources. The plugin creates links between your in-text citations and their corresponding sources in the bibliography block, making it easier for readers to find and check your references.
 
+### [Try now on WordPress Playground!](https://playground.wordpress.net/?plugin=citations&url=/wp-admin/post-new.php)
+
+## How to use:
+
 ### Creating In-Text Citations
 1. Navigate to the Posts section of your WordPress dashboard.
 1. Click on the Add New button to create a new post, or select an existing post where you want to add citations.
