@@ -8,12 +8,12 @@ License URI: https://github.com/luehrsenheinrich/wpm-citations/blob/main/LICENSE
 Stable tag: 0.2.1
 Tested up to: 6.3.1
 
-This Plugin introduces practical citation functionality to the WordPress Block Editor, aiming to streamline the process of adding references to your content.
+This Plugin introduces practical citation functionality to the WordPress Block Editor, aiming to streamline the process of adding footnotes & references to your content.
 
 ## Features
 
 1.  **Cite Rich Text Format**: This feature lets users mark citations in their text and assign them a specific source. This makes adding citations straightforward, enhancing the clarity and reliability of your content.
-2.  **Bibliography Block**: This plugin also offers a bibliography block that displays all referenced sources. The plugin creates links between your in-text citations and their corresponding sources in the bibliography block, making it easier for readers to find and check your references.
+2.  **Bibliography Block**: This plugin also offers a bibliography block that displays all referenced sources as footnotes. The plugin creates links between your in-text citations and their corresponding sources in the bibliography block, making it easier for readers to find and check your references.
 
 ### [Try now on WordPress Playground!](https://playground.wordpress.net/?plugin=citations&url=/wp-admin/post-new.php)
 
