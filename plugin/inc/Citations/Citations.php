@@ -117,8 +117,9 @@ class Citations {
 
 		/**
 		 * Use regex to fetch the 'data-cite-text' attribute from the tag.
+		 * The attribute can have single quotes.
 		 */
-		$pattern = '/data-cite-text=[\'"]([^\'"]*)[\'"]/i';
+		$pattern = '/data-cite-text="([^"]*?)"/i';
 		preg_match( $pattern, $whole_tag, $matches );
 		if ( ! empty( $matches[1] ) ) {
 			$citation = $matches[1];
