@@ -74,7 +74,7 @@
     "postcss": "^8.4.30",
     "postcss-import": "^15.1.0",
     "postcss-loader": "^7.3.3",
-    "postcss-preset-env": "^9.0.0",
+    "postcss-preset-env": "^9.1.4",
     "raw-loader": "^4.0.2",
     "react-select": "^5.7.5",
     "request": "^2.88.2",
